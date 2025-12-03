@@ -193,6 +193,71 @@
             from { transform: translateX(100%); }
             to { transform: translateX(-100%); }
         }
+
+        /* Responsivo para mobile */
+        @media (max-width: 768px) {
+            .titulo {
+                font-size: 2.5em;
+                letter-spacing: 5px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .contador {
+                padding: 30px;
+                border-width: 5px;
+            }
+
+            .dias {
+                font-size: 5em;
+                letter-spacing: 10px;
+            }
+
+            .label {
+                font-size: 1.8em;
+                margin-top: 10px;
+            }
+
+            .mensagem {
+                font-size: 1.3em;
+                padding: 15px;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .marquee {
+                font-size: 1.2em;
+            }
+
+            .emoji-container {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo {
+                font-size: 1.8em;
+                letter-spacing: 3px;
+            }
+
+            .dias {
+                font-size: 4em;
+                letter-spacing: 5px;
+            }
+
+            .label {
+                font-size: 1.5em;
+            }
+
+            .mensagem {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            .marquee {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,7 +352,8 @@
             '🍺 GELADEIRA TÁ PRONTA? 🍺',
             '🎵 DANÇA DO CREU! 🎵',
             '🔞 TAMBÉM COM ESSE PIRU GROSSO! 🍆',
-            '💅 CADÊ AS DIVAS? 💅'
+            '💅 CADÊ AS DIVAS? 💅',
+            '👈👈 BOLSONARO 22 👈👈'
         ];
 
         let indiceMensagem = 0;
