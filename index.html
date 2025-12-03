@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 SITIOZADA DO CREU 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: gradient 3s ease infinite;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-bottom: 80px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f0f;
+            position: absolute;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .titulo {
+            font-size: 5em;
+            color: #fff;
+            text-shadow: 
+                3px 3px 0 #ff0000,
+                6px 6px 0 #00ff00,
+                9px 9px 0 #0000ff,
+                12px 12px 0 #ffff00;
+            animation: shake 0.5s infinite, rainbow 2s infinite;
+            margin-bottom: 50px;
+            transform: rotate(-5deg);
+            letter-spacing: 10px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(-5deg) translateX(0); }
+            25% { transform: rotate(-7deg) translateX(-10px); }
+            75% { transform: rotate(-3deg) translateX(10px); }
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .contador {
+            border: 10px dashed #ff00ff;
+            border-radius: 50px;
+            padding: 50px;
+            box-shadow: 0 0 50px #00ffff, 0 0 100px #ff00ff;
+            animation: pulse 1s infinite, float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .dias {
+            font-size: 10em;
+            font-weight: bold;
+            color: #ff0;
+            text-shadow: 
+                5px 5px 0 #f0f,
+                -5px -5px 0 #0ff;
+            animation: blink 0.5s infinite, wiggle 1s infinite;
+            letter-spacing: 20px;
+            text-align: center;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .label {
+            font-size: 3em;
+            color: #0f0;
+            text-shadow: 3px 3px 0 #000;
+            margin-top: 20px;
+            animation: bounce 0.8s infinite;
+            font-style: italic;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .emoji-container {
+            position: fixed;
+            font-size: 3em;
+            animation: spin-around 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes spin-around {
+            from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+        }
+
+        .mensagem {
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 2px 2px 0 #000;
+            margin-top: 30px;
+            animation: flash 1s infinite;
+            background: rgba(255, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            border: 5px solid #ffff00;
+            transform: skew(-5deg);
+        }
+
+        @keyframes flash {
+            0%, 100% { background: rgba(255, 0, 0, 0.5); }
+            50% { background: rgba(0, 255, 0, 0.5); }
+        }
+
+        .estrela {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 1s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .marquee {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #ff0;
+            font-size: 2em;
+            padding: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">🎊 SITIOZADA DO CREU 🎊</h1>
+    
+    <div class="contador">
+    <div class="label">FALTAM:</div>
+        <div class="dias" id="dias">--</div>
+        <div class="label">DIAS! 🔞</div>
+    </div>
+
+    <div class="mensagem">
+        🎸 PREPARANDO O CHITÃOZINHO! 🎸
+    </div>
+
+    <div class="marquee">
+        <span>🔥 DANÇA DO CREU 🔥 RUMO AO SÍTIO 🐔 PREPARE O CHURRASCO 🥩 BEBIDA GELADA ❄️ SOM AUTOMOTIVO 🔊 PISCINA 🏊 DIVERSÃO GARANTIDA 🎉 </span>
+    </div>
+
+    <div class="emoji-container" style="top: 10%; left: 10%;">🐄</div>
+    <div class="emoji-container" style="top: 20%; right: 10%; animation-duration: 8s;">🐷</div>
+    <div class="emoji-container" style="bottom: 30%; left: 20%; animation-duration: 12s;">🐔</div>
+    <div class="emoji-container" style="top: 60%; right: 30%; animation-duration: 15s;">🌽</div>
+
+    <script>
+        // Criar confetes
+        function criarConfete() {
+            const confete = document.createElement('div');
+            confete.className = 'confetti';
+            confete.style.left = Math.random() * 100 + 'vw';
+            confete.style.animationDelay = Math.random() * 3 + 's';
+            confete.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confete.style.width = (Math.random() * 10 + 5) + 'px';
+            confete.style.height = (Math.random() * 10 + 5) + 'px';
+            document.body.appendChild(confete);
+            
+            setTimeout(() => confete.remove(), 3000);
+        }
+
+        setInterval(criarConfete, 100);
+
+        // Criar estrelas
+        function criarEstrela() {
+            const estrela = document.createElement('div');
+            estrela.className = 'estrela';
+            estrela.style.left = Math.random() * 100 + 'vw';
+            estrela.style.top = Math.random() * 100 + 'vh';
+            estrela.style.animationDelay = Math.random() * 1 + 's';
+            document.body.appendChild(estrela);
+            
+            setTimeout(() => estrela.remove(), 1000);
+        }
+
+        setInterval(criarEstrela, 200);
+
+        // Contagem regressiva
+        function atualizarContador() {
+            const dataSitio = new Date('2026-01-17T00:00:00');
+            const agora = new Date();
+            const diferenca = dataSitio - agora;
+            
+            const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
+            
+            const elementoDias = document.getElementById('dias');
+            elementoDias.textContent = dias;
+            
+            // Efeito especial quando mudar o número
+            elementoDias.style.transform = 'scale(1.3) rotate(360deg)';
+            setTimeout(() => {
+                elementoDias.style.transform = 'scale(1) rotate(0deg)';
+            }, 300);
+        }
+
+        // Atualizar a cada segundo
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+
+        // Sons aleatórios (vibração visual)
+        setInterval(() => {
+            document.body.style.transform = `rotate(${Math.random() * 2 - 1}deg)`;
+            setTimeout(() => {
+                document.body.style.transform = 'rotate(0deg)';
+            }, 50);
+        }, 3000);
+
+        // Mudar mensagem
+        const mensagens = [
+            '🎸 PREPARANDO OS MODÃO! 🎸',
+            '🔥 BORA PRO SÍTIO, GALERA! 🔥',
+            '🐄 MUUUUito LOUCO! 🐄',
+            '🎉 CONTAGEM REGRESSIVA! 🎉',
+            '🍺 GELADEIRA TÁ PRONTA? 🍺',
+            '🎵 DANÇA DO CREU! 🎵',
+            '🔞 TAMBÉM COM ESSE PIRU GROSSO! 🍆',
+            '💅 CADÊ AS DIVAS? 💅'
+        ];
+
+        let indiceMensagem = 0;
+        setInterval(() => {
+            indiceMensagem = (indiceMensagem + 1) % mensagens.length;
+            document.querySelector('.mensagem').textContent = mensagens[indiceMensagem];
+        }, 2000);
+    </script>
+</body>
+</html>
